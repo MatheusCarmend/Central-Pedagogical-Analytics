@@ -43,9 +43,9 @@ A decisão foi delimitar o projeto às bases estruturadas que sustentam análise
 
 ## Estrutura
 
-- `01_Excel/`: arquivo de exemplo com somente as bases incluídas no escopo e o dicionário correspondente.
+- `01_Excel/`: arquivo de exemplo com somente as dez bases incluídas no escopo e o dicionário de dados.
 - `02_SQL/`: scripts SQL organizados por etapa.
-- `03_Modelagem/`: diagrama entidade-relacionamento.
+- `03_Modelagem/`: diagrama entidade-relacionamento (a ser incluído na próxima atualização).
 - `docs/`: documentação de escopo, qualidade e decisões.
 
 ## Limitações e decisões de modelagem
@@ -56,6 +56,10 @@ A decisão foi delimitar o projeto às bases estruturadas que sustentam análise
 - `MapaCalor` e `NovosAlunos` não apresentaram uma coluna de identificador único validada no processo de auditoria.
 
 Consulte [docs/escopo-e-limitacoes.md](docs/escopo-e-limitacoes.md) e [docs/qualidade-dos-dados.md](docs/qualidade-dos-dados.md) para detalhes.
+
+## Arquivo de dados
+
+O arquivo `Central_Pedagogical_Analytics_Dados_Sinteticos.xlsx` contém somente as dez bases do escopo e o dicionário de dados. As abas de painéis, controle operacional, processos e configurações foram deixadas de fora dessa cópia enxuta; a planilha de origem completa foi preservada separadamente.
 
 ## Status
 
