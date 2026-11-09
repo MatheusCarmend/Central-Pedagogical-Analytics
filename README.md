@@ -63,5 +63,5 @@ O arquivo `Central_Pedagogical_Analytics_Dados_Sinteticos.xlsx` contém somente 
 
 ## Status
 
-**Versão 1 — etapa SQL:** documentação inicial publicada; scripts e diagrama serão adicionados na próxima atualização.  
+**Versão 1 — etapa SQL:** documentação inicial publicada com scripts e diagrama adicionados.  
 **Power BI:** etapa posterior, em desenvolvimento; os dashboards ainda não fazem parte desta entrega.
