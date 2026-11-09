@@ -1,67 +1,44 @@
 # Central Pedagogical Analytics
 
-Projeto de portfólio de análise de dados com foco em organização, qualidade, modelagem e exploração de dados de uma operação pedagógica fictícia.
+Projeto pessoal de análise de dados com informações pedagógicas sintéticas. A ideia é praticar organização de dados, SQL, modelagem e análise a partir de planilhas.
 
-> **Dados 100% sintéticos.** Nomes, registros e situações foram criados para fins de estudo. Nenhum dado real de alunos, professores ou instituição deve ser publicado neste repositório.
+**Todos os dados são fictícios** e foram criados para este projeto.
 
-## Objetivo
+## O projeto
 
-Construir uma base analítica relacional a partir de planilhas, documentar decisões de tratamento e qualidade dos dados e preparar consultas que apoiem análises sobre professores, alunos, turmas e processos de acompanhamento pedagógico.
+Foram selecionadas dez bases de uma planilha de estudo e importadas para o SQL Server, totalizando **3.870 registros**.
 
-## Escopo da versão atual
+O trabalho inclui:
+- organização das bases no SQL Server;
+- verificações de qualidade e consistência;
+- análise de referências entre tabelas;
+- consultas SQL para explorar os dados;
+- diagrama de relacionamento entre as tabelas.
 
-A etapa SQL contempla dez conjuntos de dados:
+## Ferramentas
 
-| Tabela | Registros |
-|---|---:|
-| BaseProfessores | 30 |
-| BaseAlunos | 1.200 |
-| BaseTurmas | 100 |
-| ObservacoesAula | 550 |
-| Feedbacks | 520 |
-| TeachersAssessment | 280 |
-| Acompanhamentos | 250 |
-| PlanosAcao | 220 |
-| NovosAlunos | 420 |
-| MapaCalor | 300 |
-| **Total** | **3.870** |
+- Excel
+- SQL Server e SSMS
+- SQL
+- diagrams.net (Draw.io)
 
-O trabalho inclui importação e organização das tabelas, auditorias de identificadores, análise de valores ausentes e duplicidades, validação de referências entre conjuntos de dados, documentação das limitações encontradas e consultas analíticas em SQL Server.
+## Estrutura do repositório
 
-## O que ficou fora do escopo SQL
+- `01_Excel/`: planilha com as bases utilizadas e o dicionário de dados.
+- `02_SQL/`: scripts usados durante o projeto.
+- `03_Modelagem/`: diagrama entidade-relacionamento.
+- `docs/`: notas sobre o escopo e os pontos encontrados na análise.
 
-A planilha de origem também contém abas de visão gerencial e controle operacional, como **Central Geral**, **Mini Centrais**, **Radar Geral**, **Asana Controle**, **Processos** e **Configurações**. Essas abas não foram modeladas como tabelas nesta versão.
+## Alguns pontos encontrados
 
-A decisão foi delimitar o projeto às bases estruturadas que sustentam análises pedagógicas. Em particular, a aba **Asana Controle** representa um fluxo de tarefas separado; não foi feita integração com a API do Asana nem análise de tarefas nessa etapa. As abas de dashboard e configurações também não foram tratadas como fontes transacionais independentes.
+As tabelas de origem não tinham chaves estrangeiras físicas; por isso, os relacionamentos foram identificados pelas referências existentes nos dados. Também foram preservados campos de status sem preenchimento quando não havia uma regra clara para completá-los.
 
-## Tecnologias
+Em 70 registros de `PlanosAcao` classificados como área "Turma", a referência corresponde a alunos, e não a turmas. Esses registros foram mantidos sem correção automática.
 
-- Microsoft SQL Server / SQL Server Management Studio
-- Excel (fonte de dados sintéticos)
-- SQL (auditoria, validação e consultas analíticas)
-- Modelagem de dados (DER)
-
-## Estrutura
-
-- `01_Excel/`: arquivo de exemplo com somente as dez bases incluídas no escopo e o dicionário de dados.
-- `02_SQL/`: scripts SQL organizados por etapa.
-- `03_Modelagem/`: diagrama entidade-relacionamento (a ser incluído na próxima atualização).
-- `docs/`: documentação de escopo, qualidade e decisões.
-
-## Limitações e decisões de modelagem
-
-- As relações entre tabelas foram identificadas por referências lógicas; as tabelas de origem não possuíam chaves estrangeiras físicas.
-- Os campos de status nulos em algumas tabelas foram preservados, pois não havia regra de negócio validada para preenchimento.
-- Foram identificados 70 registros de `PlanosAcao` classificados como área "Turma" cuja referência em `Professor/Aluno` corresponde a alunos cadastrados, e não a turmas. Esses registros foram preservados sem correção automática e a tabela não foi conectada ao DER por essa referência ambígua.
-- `MapaCalor` e `NovosAlunos` não apresentaram uma coluna de identificador único validada no processo de auditoria.
-
-Consulte [docs/escopo-e-limitacoes.md](docs/escopo-e-limitacoes.md) e [docs/qualidade-dos-dados.md](docs/qualidade-dos-dados.md) para detalhes.
-
-## Arquivo de dados
-
-O arquivo `Central_Pedagogical_Analytics_Dados_Sinteticos.xlsx` contém somente as dez bases do escopo e o dicionário de dados. As abas de painéis, controle operacional, processos e configurações foram deixadas de fora dessa cópia enxuta; a planilha de origem completa foi preservada separadamente.
+Mais detalhes:
+- [Escopo e limitações](docs/escopo-e-limitacoes.md)
+- [Qualidade dos dados](docs/qualidade-dos-dados.md)
 
 ## Status
 
-**Versão 1 — etapa SQL:** documentação inicial publicada com scripts e diagrama adicionados.  
-**Power BI:** etapa posterior, em desenvolvimento; os dashboards ainda não fazem parte desta entrega.
+A etapa de exploração, auditoria e consultas SQL está documentada. A parte de Power BI será desenvolvida posteriormente.
