@@ -1,29 +1,16 @@
 # Escopo e limitações
 
-## Escopo adotado
+O projeto utiliza dez bases relacionadas a professores, alunos, turmas e atividades de acompanhamento pedagógico. Juntas, elas somam 3.870 registros.
 
-O projeto foi delimitado às dez bases importadas para o SQL Server: professores, alunos, turmas, observações de aula, feedbacks, assessments, acompanhamentos, planos de ação, novos alunos e mapa de calor. Essas bases permitem demonstrar integração relacional, auditoria de qualidade e consultas analíticas.
+Outras abas da planilha original — como painéis, controles operacionais, processos e configurações — ficaram de fora. Elas tinham funções diferentes das bases usadas nas consultas e não eram necessárias para esta etapa.
 
-## Abas não incluídas no banco
+A aba de controle do Asana também não foi integrada ao banco.
 
-A planilha de origem também contém abas com funções diferentes das bases estruturadas:
+## Limitações consideradas
 
-- **Central Geral** e **Mini Centrais**: painéis de consolidação e visualização.
-- **Radar Geral**: visão de prioridades e pendências.
-- **Asana Controle**: acompanhamento de tarefas e ações operacionais.
-- **Processos**: documentação de etapas, responsáveis e prazos.
-- **Configurações**: listas de valores e parâmetros usados por validações e fórmulas.
-- **README Projeto**, **Guia V5** e **Teste de Integração**: orientação e apoio ao funcionamento da planilha.
+- As tabelas não tinham chaves estrangeiras físicas; os relacionamentos foram identificados pelas referências presentes nos dados.
+- Campos de status sem preenchimento foram mantidos quando não havia regra confirmada para completá-los.
+- 70 registros de `PlanosAcao` classificados como área "Turma" apontam para alunos na coluna `Professor/Aluno`. Eles foram preservados sem alteração.
+- Não foi possível validar um identificador único para `MapaCalor` e `NovosAlunos`.
 
-Essas abas ficaram fora do escopo do banco relacional desta versão. Algumas são camadas de apresentação ou documentação, e não tabelas transacionais. A aba Asana Controle não foi integrada ao Asana nem modelada como tabela SQL.
-
-## Como apresentar essa decisão
-
-O projeto demonstra a construção de uma camada de dados analítica a partir das bases pedagógicas. Os painéis e controles operacionais existentes na planilha original foram considerados fora do escopo da primeira entrega. Uma evolução futura pode modelar o controle de tarefas e integrar dados do Asana, caso exista uma necessidade analítica clara.
-
-## Decisões de qualidade
-
-- Não preencher automaticamente campos de status nulos sem regra de negócio validada.
-- Preservar os 70 registros de Planos de Ação com área "Turma" cuja referência em `Professor/Aluno` corresponde a alunos, não a turmas.
-- Tratar relacionamentos como lógicos quando não há chaves estrangeiras físicas na origem.
-- Não criar identificadores artificiais retroativamente em Mapa de Calor e Novos Alunos sem documentar uma regra de negócio.
+Esses pontos foram mantidos para não criar informações ou regras que não estavam presentes na fonte.
