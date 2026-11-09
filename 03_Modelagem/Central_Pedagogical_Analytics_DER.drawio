@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-11-02T00:00:00.000Z" agent="ChatGPT" version="24.7.17" type="device">
+  <diagram id="central-der" name="Central Pedagogical Analytics DER">
+    <mxGraphModel dx="2600" dy="1600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2600" pageHeight="1650" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;Central Pedagogical Analytics&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#5C6B78&quot;&gt;Diagrama Entidade-Relacionamento (DER) • estrutura relacional atual&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=26;fontColor=#17324D;" vertex="1" parent="1">
+          <mxGeometry x="90" y="35" width="1800" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="h1" value="CADASTROS PRINCIPAIS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4A86B8;fillOpacity=15;strokeColor=none;fontStyle=1;fontSize=16;fontColor=#4A86B8;align=left;spacingLeft=14;" vertex="1" parent="1">
+          <mxGeometry x="90" y="175" width="2420" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="h2" value="REGISTROS PEDAGÓGICOS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4C9A72;fillOpacity=15;strokeColor=none;fontStyle=1;fontSize=16;fontColor=#4C9A72;align=left;spacingLeft=14;" vertex="1" parent="1">
+          <mxGeometry x="90" y="665" width="2420" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="h3" value="ACOMPANHAMENTO DE ALUNOS E PLANOS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C58B24;fillOpacity=15;strokeColor=none;fontStyle=1;fontSize=16;fontColor=#C58B24;align=left;spacingLeft=14;" vertex="1" parent="1">
+          <mxGeometry x="690" y="1115" width="1640" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="BaseProfessores" value="&lt;b&gt;BaseProfessores&lt;/b&gt;&lt;hr&gt;PK* ID Professor&lt;br&gt;Professor&lt;br&gt;Coordenador&lt;br&gt;Segmento&lt;br&gt;Status" style="swimlane;html=1;startSize=38;horizontal=1;rounded=1;whiteSpace=wrap;fillColor=#DCEEFF;swimlaneFillColor=#4A86B8;strokeColor=#4A86B8;fontColor=#243342;fontSize=15;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="90" y="220" width="440" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="BaseTurmas" value="&lt;b&gt;BaseTurmas&lt;/b&gt;&lt;hr&gt;PK* ID Turma&lt;br&gt;Turma&lt;br&gt;Coordenador&lt;br&gt;Professor(es)&lt;br&gt;Segmento&lt;br&gt;Status" style="swimlane;html=1;startSize=38;horizontal=1;rounded=1;whiteSpace=wrap;fillColor=#DCEEFF;swimlaneFillColor=#4A86B8;strokeColor=#4A86B8;fontColor=#243342;fontSize=15;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="220" width="440" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="BaseAlunos" value="&lt;b&gt;BaseAlunos&lt;/b&gt;&lt;hr&gt;PK* ID Aluno&lt;br&gt;Aluno&lt;br&gt;Turma&lt;br&gt;Professor&lt;br&gt;Coordenador&lt;br&gt;Data entrada" style="swimlane;html=1;startSize=38;horizontal=1;rounded=1;whiteSpace=wrap;fillColor=#DCEEFF;swimlaneFillColor=#4A86B8;strokeColor=#4A86B8;fontColor=#243342;fontSize=15;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="2070" y="220" width="440" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="ObservacoesAula" value="&lt;b&gt;ObservacoesAula&lt;/b&gt;&lt;hr&gt;PK* ID Observação&lt;br&gt;REF Professor&lt;br&gt;REF Turma&lt;br&gt;Coordenador&lt;br&gt;Data&lt;br&gt;Foco" style="swimlane;html=1;startSize=38;horizontal=1;rounded=1;whiteSpace=wrap;fillColor=#DFF3E8;swimlaneFillColor=#4C9A72;strokeColor=#4C9A72;fontColor=#243342;fontSize=15;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="90" y="720" width="440" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="Feedbacks" value="&lt;b&gt;Feedbacks&lt;/b&gt;&lt;hr&gt;PK* ID Feedback&lt;br&gt;REF Professor&lt;br&gt;Coordenador&lt;br&gt;Data&lt;br&gt;Origem" style="swimlane;html=1;startSize=38;horizontal=1;rounded=1;whiteSpace=wrap;fillColor=#DFF3E8;swimlaneFillColor=#4C9A72;strokeColor=#4C9A72;fontColor=#243342;fontSize=15;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="690" y="720" width="440" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="TeachersAssessment" value="&lt;b&gt;TeachersAssessment&lt;/b&gt;&lt;hr&gt;PK* ID Assessment&lt;br&gt;REF Professor&lt;br&gt;Coordenador&lt;br&gt;Data Assessment&lt;br&gt;Tipo" style="swimlane;html=1;startSize=38;horizontal=1;rounded=1;whiteSpace=wrap;fillColor=#DFF3E8;swimlaneFillColor=#4C9A72;strokeColor=#4C9A72;fontColor=#243342;fontSize=15;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="1290" y="720" width="440" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="Acompanhamentos" value="&lt;b&gt;Acompanhamentos&lt;/b&gt;&lt;hr&gt;PK* ID Acompanhamento&lt;br&gt;REF Aluno&lt;br&gt;REF Turma&lt;br&gt;Coordenador&lt;br&gt;Professor informado" style="swimlane;html=1;startSize=38;horizontal=1;rounded=1;whiteSpace=wrap;fillColor=#DFF3E8;swimlaneFillColor=#4C9A72;strokeColor=#4C9A72;fontColor=#243342;fontSize=15;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="1890" y="720" width="440" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="MapaCalor" value="&lt;b&gt;MapaCalor&lt;/b&gt;&lt;hr&gt;REF Aluno&lt;br&gt;REF Turma&lt;br&gt;Professor&lt;br&gt;Coordenador&lt;br&gt;Risco&lt;br&gt;Status" style="swimlane;html=1;startSize=38;horizontal=1;rounded=1;whiteSpace=wrap;fillColor=#FFF0CC;swimlaneFillColor=#C58B24;strokeColor=#C58B24;fontColor=#243342;fontSize=15;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="1290" y="1170" width="440" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="NovosAlunos" value="&lt;b&gt;NovosAlunos&lt;/b&gt;&lt;hr&gt;REF Aluno&lt;br&gt;REF Turma&lt;br&gt;Professor&lt;br&gt;Coordenador&lt;br&gt;Data início&lt;br&gt;Status geral" style="swimlane;html=1;startSize=38;horizontal=1;rounded=1;whiteSpace=wrap;fillColor=#FFF0CC;swimlaneFillColor=#C58B24;strokeColor=#C58B24;fontColor=#243342;fontSize=15;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="1890" y="1170" width="440" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="PlanosAcao" value="&lt;b&gt;PlanosAcao&lt;/b&gt;&lt;hr&gt;PK* ID Plano&lt;br&gt;ID&lt;br&gt;Área&lt;br&gt;Professor/Aluno&lt;br&gt;Coordenador" style="swimlane;html=1;startSize=38;horizontal=1;rounded=1;whiteSpace=wrap;fillColor=#EEF1F4;swimlaneFillColor=#7A8793;strokeColor=#7A8793;fontColor=#243342;fontSize=15;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="690" y="1170" width="440" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" value="Professor(es) • 1:N" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#52697C;strokeWidth=2;endArrow=ERone;startArrow=ERmany;endFill=0;startFill=0;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="BaseProfessores" target="BaseTurmas">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="Turma • 1:N" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#52697C;strokeWidth=2;endArrow=ERone;startArrow=ERmany;endFill=0;startFill=0;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="BaseTurmas" target="BaseAlunos">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="Professor • 1:N" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#52697C;strokeWidth=2;endArrow=ERone;startArrow=ERmany;endFill=0;startFill=0;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="BaseProfessores" target="BaseAlunos">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="Professor • 1:N" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#52697C;strokeWidth=2;endArrow=ERone;startArrow=ERmany;endFill=0;startFill=0;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="BaseProfessores" target="ObservacoesAula">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="Turma • 1:N" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#52697C;strokeWidth=2;endArrow=ERone;startArrow=ERmany;endFill=0;startFill=0;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="BaseTurmas" target="ObservacoesAula">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="Professor • 1:N" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#52697C;strokeWidth=2;endArrow=ERone;startArrow=ERmany;endFill=0;startFill=0;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="BaseProfessores" target="Feedbacks">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="Professor • 1:N" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#52697C;strokeWidth=2;endArrow=ERone;startArrow=ERmany;endFill=0;startFill=0;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="BaseProfessores" target="TeachersAssessment">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="Aluno • 1:N" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#52697C;strokeWidth=2;endArrow=ERone;startArrow=ERmany;endFill=0;startFill=0;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="BaseAlunos" target="Acompanhamentos">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="Turma • 1:N" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#52697C;strokeWidth=2;endArrow=ERone;startArrow=ERmany;endFill=0;startFill=0;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="BaseTurmas" target="Acompanhamentos">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="Aluno • 1:N" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#52697C;strokeWidth=2;endArrow=ERone;startArrow=ERmany;endFill=0;startFill=0;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="BaseAlunos" target="MapaCalor">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="Aluno • 1:N" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#52697C;strokeWidth=2;endArrow=ERone;startArrow=ERmany;endFill=0;startFill=0;fontSize=13;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="BaseAlunos" target="NovosAlunos">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="&lt;b&gt;LEGENDA&lt;/b&gt;&lt;br&gt;PK* = identificador único validado (candidato a PK) &amp;nbsp; • &amp;nbsp; REF = referência textual &amp;nbsp; • &amp;nbsp; Linhas tracejadas = relacionamentos lógicos&lt;br&gt;&lt;font color=&quot;#5C6B78&quot;&gt;Não há PKs/FKs físicas implementadas. PlanosAcao permanece sem ligação: referências polimórficas e inconsistência nos 70 registros classificados como Turma.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F6F8FA;strokeColor=#D9E1E8;fontSize=14;fontColor=#243342;align=left;verticalAlign=middle;spacingLeft=18;" vertex="1" parent="1">
+          <mxGeometry x="90" y="1450" width="2420" height="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
